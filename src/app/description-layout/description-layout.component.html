@@ -1,0 +1,46 @@
+<div class="p-4 overflow-hidden sm:ml-64 min-h-screen">
+  <div class="container p-4">
+    <div class="flex gap-4 flex-col lg:flex-row ">
+      <div class="lg:w-2/3"><h1 class="text-5xl font-semibold mb-4 md:mb-4 font-Pacifico">{{
+          data ? data[1].value : ''
+        }}</h1>
+        <div class="grid gap-4 items-stretch lg:grid-cols-2">
+          <div><img class="w-full rounded-2xl mb-8"
+                    [src]="data ? data[6].value : ''"
+                    [width]="450"
+                    [height]="450"
+                    alt="Keleya Zaara">
+            <ul class="flex gap-4 justify-center">
+              <li class="bg-red-600  text-white py-2 px-4 rounded-lg "><a target="_blank"
+                                                                          [href]="data ? data[8].value : ''"
+                                                                          class="flex gap-2 justify-center items-center">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em"
+                     width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+                </svg>
+                youtube </a></li>
+            </ul>
+          </div>
+          <p class="font-Pacifico">{{
+              data ? data[5].value : ''
+
+            }}
+          </p></div>
+      </div>
+      <div class="lg:w-1/3 p-4">
+        <div class="bg-white rounded-2xl p-4"><h3
+          class="text-2xl font-semibold mb-4 border-b-4 p-2">Ingredients</h3>
+
+          @for (item of data; track $index) {
+            @if (item.key.includes('strIngredient') && item.value != '') {
+              <div class="flex justify-between p-2 border-b-2 last-of-type:border-b-0 ">
+                <span>{{ item.value }}</span><span>{{ data ? data[$index + 20].value : '' }}</span></div>
+            }
+          }
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

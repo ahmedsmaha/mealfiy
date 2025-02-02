@@ -1,0 +1,8 @@
+<app-navbar/>
+
+<div class="p-4 sm:ml-64 meals mt-24 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-20">
+  @for (meal of data?.meals; track meal.idMeal) {
+    <app-meal [name]="meal.strMeal | trimWords:2" [id]="meal.idMeal" [imageUrl]="meal.strMealThumb"/>
+
+  }
+</div>

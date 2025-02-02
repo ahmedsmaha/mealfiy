@@ -1,0 +1,10 @@
+<div
+  class="meal text-center hover:shadow-xl group  hover:scale-105 duration-300 transition-all bg-white p-12 pb-4  rounded-[35px]"
+><img [ngSrc]="imageUrl()" [width]="245" [height]="245"
+      class="w-full group-hover:rotate-[360deg] duration-700 transition-all rounded-full drop-shadow-xl  -translate-y-20  shadow-2xl"
+      alt="">
+  <h3 class="font-semibold -mt-12 font-Pacifico tracking-wider text-xl">{{ name() }}</h3>
+  <button
+    class="text-white bg-gradient-to-r mt-4 bg-green-500 hover:bg-emerald-600 font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300  px-8 py-2 rounded-full">
+    <a [routerLink]="['/meal', id()]"> View Recipe</a></button>
+</div>
